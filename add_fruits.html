@@ -33,7 +33,6 @@ form h2 {
 }
 
 form:hover{
-    transform: translateY(-10px);
     border: 1px solid var(--SubHeading2-color);
 }
 .form-group {
@@ -89,6 +88,7 @@ button#submit:hover {
             border-radius: 10px; /* Rounded corners for the table */
     overflow: hidden; /* Ensures the rounded corners are applied to content */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a polished look */
+    margin-bottom: 70px;
 
         }
 
@@ -129,6 +129,52 @@ button#submit:hover {
             margin-top: 20px;
             text-align: center;
         }
+
+        /* Button Styling */
+        button.edit, button.delete {
+            padding: 3px 6px;
+            border-radius: 5px; /* Rounded corners */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 12px; /* Font size */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        /* Edit Button */
+        button.edit {
+            background-color: rgb(238, 255, 238); /* Green background */
+            color: rgb(0, 0, 0);
+            border: 1px solid var(--SubHeading2-color);
+        }
+
+        button.edit:hover {
+            background-color: var(--SubHeading3-color); /* Darker green on hover */
+            transform: translateY(-2px); /* Slightly raise the button */
+            color: white;
+        }
+
+        /* Delete Button */
+        button.delete {
+            border: 1px solid #d80e00; /* Red background */
+            color: black;
+            background-color: #ffe1df;
+        }
+
+        button.delete:hover {
+            background-color: #f73b3b; /* Darker red on hover */
+            transform: translateY(-2px); /* Slightly raise the button */
+            color: white;
+        }
+
+        /* Optional: Add a box shadow for extra effect */
+        button.edit, button.delete {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        button.edit:hover, button.delete:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
     </style>
 </head>
 <body>
@@ -137,7 +183,7 @@ button#submit:hover {
     <main id="main-container">
         <section class="item-container">
             <form action="./php/upload_fruits.php" method="POST" enctype="multipart/form-data">
-                <h2>🍂🌽ADD A NEW FRUIT🌽🍂</h2>
+                <h2>🌿🫐ADD A NEW FRUIT🫐🌿</h2>
                 <div class="form-group">
                     <label for="item-name">Name</label>
                     <input type="text" id="item-name" name="item-name" required>
@@ -158,8 +204,11 @@ button#submit:hover {
                     <select id="item-category" name="item-category" required>
                         <option value="Citrus">Citrus</option>
                         <option value="Berries">Berries</option>
-                        <option value="Tropical">Tropical</option>
-                        <option value="Stone Fruits">Stone Fruits</option>
+                        <option value="Tropical">Bannanas</option>
+                        <option value="Green Fruits">Green Fruits</option>
+                        <option value="Melons Fruits">Melons</option>
+                        <option value="General Fruits">General</option>
+
                     </select>
                 </div>
 
@@ -184,7 +233,7 @@ button#submit:hover {
         </section>
 
         <section class="fruit-table-container">
-            <h2>Fruits List</h2>
+            <h2>˚⊱🍃IN STOCK🍃⊰˚</h2>
             <table id="fruits-table">
                 <thead>
                     <tr>

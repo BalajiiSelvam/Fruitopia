@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/root.css"> 
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form">
+            <h3>REGISTER</h3>
+            <form id="register-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="role">Role</label>
+                <select id="role" name="role" required>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+                
+                <input type="submit" value="Register">
+
+                <p style="text-align: center; margin-top: -5px; font-size: var(--Size-12); margin-left: -18px;">
+                    Already have an account ? <a href="login.html" style="color: var(--text-color);">Login</a>
+                </p>
+                
+                <p style="text-align: center; margin-top: 20px; font-size: var(--Size-18); font-family: var(--DancingScript); font-weight: bold;">
+                    <span style="color: var(--Quote-color);">❝</span>
+                    <span>Dive into a refreshing journey with us</span><br>
+                    <span>register today and</span><br>
+                    <span>discover the sweet rewards waiting for you</span>
+                    <span style="color: var(--Quote-color);">❞</span><br>
+                    <span style="font-size: 23px">˗ˏˋ 🍓 ˎˊ˗</span>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="image-container"></div>
+    <div class="overlay-text">
+        <h2>Let the Fruity Fun Begin<br>with<br><span class="highlight">˗ˏˋ ꒰ 🍒 Fruitopia 🍒 ꒱ ˎˊ˗</span></h2>
+    </div>
+    <script src="./js/register_script.js"></script>
+</body>
+</html>

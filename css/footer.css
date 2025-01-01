@@ -1,0 +1,127 @@
+@import url('root.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Poppins);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    width: 100%;
+    padding: 15px 100px;
+    background: var(--TopNav-color);
+    margin-top: auto; 
+}
+
+footer .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 10px; /* Keep gap between columns */
+}
+
+footer .container .sec_aboutus h5 {
+    margin-left: 140px;
+}
+
+footer .container .sec_aboutus p {
+    margin: 0 auto; /* Center the paragraph */
+    max-width: 500px; /* Limit the width for better readability */
+    font-size: var(--Size-13);
+    margin-left: -50px; /* Move paragraph to the right */
+    text-align: center;
+}
+
+/* Move Quick Links container to the left */
+footer .container .sec_quicklinks {
+    margin-left: 70px; /* Adjust this value to move left */
+}
+
+footer .container .sec_quicklinks ul li {
+    list-style: none;
+  
+}
+
+footer .container .sec_quicklinks ul li a {
+    color: #555;
+    text-decoration: none;
+    margin-bottom: 4px;
+    display: inline-block;
+    font-size: var(--Size-13);
+}
+
+footer .container .sec_contact .info {
+    position: relative;
+}
+
+footer .container .sec_contact .info li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    margin-bottom: 5px;
+}
+
+footer .container .sec_contact .info li span {
+    color: #555;
+    font-size: var(--Size-13);
+    vertical-align: middle;
+}
+
+footer .container .sec_contact .info li a {
+    color: #555;
+    text-decoration: none;
+    font-size: var(--Size-13);
+}
+
+footer .container .sci {
+    margin-top: 8px;
+    display: flex; /* Keep it as flex for social icons */
+    gap: 10px; /* Added gap for spacing */
+    font-size: 14px;
+    margin-left: 110px;
+    border-radius: 4px;
+}
+
+footer .container .sci li {
+    list-style: none;
+    text-align: center; /* Center align list items */
+}
+
+footer .container .sci li a {
+    display: flex; /* Change to flex for better centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 25px; /* Adjust width */
+    height: 25px; /* Adjust height */
+    padding: 4px; /* Add padding for larger background */
+    background: var(--SubHeading2-color);
+    border-radius: 5px;  /* Make it circular */
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .container .sci li a i {
+    color: #fff;
+    font-size: 12px;
+}
+
+.copyrightText{ 
+    width: 100%;
+    background: var(--SubHeading2-color);
+    padding: 8px 100px 8px;
+    text-align: center;
+    color: var(--White-color);
+    font-size: 11px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.copyright-symbol {
+    font-size: var(--Size-15); /* Adjust this value as needed */
+    vertical-align: middle;
+}

@@ -1,0 +1,164 @@
+@import url('root.css'); 
+
+.container {
+    margin: auto; /* Center horizontally */
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Allows vertical alignment of child elements */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    max-width: 1200px; /* Optional: Limit the container width */
+}
+
+
+.centered {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    gap: 15px;
+}
+
+.grid-5x5 {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+}
+
+.grid-1xn {
+    grid-template-columns: (4,1fr);
+    grid-template-rows: auto;
+}
+
+.card1 {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 295px;
+    width: 190px; /* Minimized width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--SubHeading2-color); 
+}
+
+.card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0 -5px 0;
+
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between; /* Pushes name and rating to opposite ends */
+    align-items: center; /* Aligns them vertically */
+    width: 100%; /* Ensures it spans the width of the card */
+    
+}
+.item-name {
+    font-size: 14px;
+    /* font-weight: bold; */
+    margin-left: 20px;
+    
+}
+.item-rating {
+    font-size: 13px;
+    color: #ffbf00; /* Gold color for rating stars */
+    margin-right: 20px;
+    
+   
+}
+
+.item-price {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+    margin-left: -68px;
+}
+
+.quantity-control {
+    display: flex;
+    justify-content: space-between; /* Evenly spaces the label and input */
+    align-items: center;
+    gap: 20px; /* Moderate spacing between elements */
+    width: 100%;
+    margin-top: -5px;
+    margin-left: 57px;
+    margin: -25; /* Adds vertical spacing for clarity */
+
+}
+
+
+
+.quantity-control input {
+    width: 67.5%; /* Adjust the width for better fit */
+    max-width: 200px; /* Limits the width on larger screens */
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center; /* Centers the input value */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+
+.add-to-cart-btn {
+    padding: 4px 6px; /* Smaller button size */
+    background-color: var(--SubHeading2-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 70%;
+    margin-top: 3px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--SubHeading3-color);
+}
+
+.more-btn {
+    align-self: flex-end; /* Aligns the button to the right edge */
+    margin-top: 20px; /* Adds spacing from the content above */
+    padding: 5px 10px; /* Smaller button size */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.more-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

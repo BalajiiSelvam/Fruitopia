@@ -1,0 +1,162 @@
+@import url('root.css'); 
+
+body {
+    display: flex;
+    height: 100vh; 
+    margin: 0; 
+    font-family: var(--Poppins); 
+    background-color:var(--White-color) ;
+}
+
+.form-container {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.form-container1 {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.form {
+    width: 400px; 
+    background: var(--White-color);
+    padding: 15px; 
+    border-radius: 13px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+    height: 480px; 
+    margin-bottom: 10px;
+}
+
+.form1 {
+    width: 400px; 
+    background: var(--White-color);
+    padding: 15px; 
+    border-radius: 13px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.form:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 0 15px var(--Glow-color); 
+}
+
+.form1:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 0 15px var(--Glow-color); 
+}
+
+
+.form h3, .form1 h3{
+    font-size: var(--Size-19);
+    text-align: center; 
+    color: var(--SubHeading-color); 
+    margin-bottom: 12px; 
+    font-weight: var(--weight-600); 
+    margin-top: 10px;
+}
+
+.form label, .form1 label {
+    display: block; 
+    margin-bottom: 5px; 
+    margin-left: 18px; 
+    font-size: var(--Size-13);
+}
+
+.form input, .form1 input{
+    width: 80%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--Glow-color); 
+    border-radius: 4px; 
+    margin-left: 18px; 
+    margin-right: auto;
+    transition: border-color 0.3s; 
+    caret-color: var(--Glow-color);
+    height: 13px;
+    font-size: var(--Size-13);
+}
+
+.form select, .form1 select {
+    width: 85%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--Glow-color); 
+    border-radius: 4px; 
+    margin-left: 18px; 
+    margin-right: auto;
+    transition: border-color 0.3s;
+    height: 34px;
+    font-size: var(--Size-13);
+}
+
+
+.form input:focus, .form select:focus,
+.form1 input:focus, .form1 select:focus {
+    border-color: var(--SubHeading-color); 
+    outline: none;
+}
+
+.form input[type="submit"], 
+.form1 input[type="submit"]  {
+    background-color: var(--SubHeading2-color); 
+    color: white; 
+    cursor: pointer; 
+    font-weight: bold; 
+    width: 85%; 
+    margin-top: 10px; 
+    margin-left: 18px;
+    transition: background-color 0.3s; 
+    height: 35px;
+    font-size: var(--Size-13);
+}
+
+.form input[type="submit"]:hover,
+.form1 input[type="submit"]:hover  {
+    background-color: var(--SubHeading3-color); /
+}
+
+.image-container {
+    flex: 1; 
+    background-image: url('../assets/loginside.png');
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 70%; 
+    margin-top: 160px;
+    margin-left: -200px;
+}
+
+.overlay-text {
+    position: absolute; 
+    top: 18%;
+    left: 71%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    color: var(--SubHeading2-color); 
+    font-family: var(--Poppins);
+}
+
+.overlay-text h2 {
+    margin: 0; 
+    font-size: var(--Size-25); 
+    font-family: var(--Satisfy);
+    font-weight: 600;
+}
+
+.overlay-text  .highlight {
+    color: var(--SubHeading3-color); 
+    font-weight: 600; 
+    font-size: var(--Size-28); 
+    font-family: var(--Satisfy);
+}

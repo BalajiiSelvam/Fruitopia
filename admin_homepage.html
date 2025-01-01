@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitopia</title>
+    <script>
+function loadHTML(elementId, file) {
+    fetch(file)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+            // Manually execute any scripts included in the HTML
+            const scripts = document.querySelectorAll('.js/header_script.js');
+            scripts.forEach(script => {
+                const newScript = document.createElement('.js/header_script.js');
+                newScript.src = script.src; // If it's an external script, set the source
+                newScript.innerHTML = script.innerHTML; // If it's inline, copy the inner code
+                document.body.appendChild(newScript); // Append to the body to execute
+            });
+        });
+}
+        window.onload = function() {
+            loadHTML('header', 'header.html');
+        };
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex; /* Flexbox for the body layout */
+        }
+        .left-column {
+            flex: 1; /* Take up two-thirds of the space */
+            padding: 20px; /* Padding inside the left column */
+        }
+        .right-column {
+            flex: 1; /* Take up one-third of the space */
+            padding: 20px; /* Padding inside the right column */
+            background: #ffffff; /* Optional background for the right column */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns for cards */
+            gap: 20px; /* Gap between cards */
+        }
+        .card {
+            border: 1px solid #ddd; /* Card border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 5px; /* Padding inside the card */
+            text-align: center; /* Center text */
+            background: #f9f9f9; /* Card background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border: 1px solid var(--Border-color);
+        }
+        h4 {
+            margin: 10px 0; /* Margin for headings */
+        }
+        h2 {
+            margin: 10px 0 -5px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <h2>DASHBOARD</h2>
+    <div class="container">
+        <div class="left-column">
+          
+            <div class="grid-container">
+                <!-- Generate 8 cards -->
+                <div class="card"><h4>Pendings Payments</h4><p>0</p></div>
+                <div class="card"><h4>Completed Payments</h4><p>0</p></div>
+                <div class="card"><h4>New Suppliers</h4><p>0</p></div>
+                <div class="card"><h4>Grievances</h4><p>0</p></div>
+                <div class="card"><h4>Total Accounts</h4><p>0</p></div>
+                <div class="card"><h4>Admins</h4><p>0</p></div>
+                <div class="card"><h4>Suppliers</h4><p>0</p></div>
+                <div class="card"><h4>Users</h4><p>0</p></div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <!-- Future content (e.g., pie chart) can be added here -->
+            
+        </div>
+    </div>
+
+    <!-- <div id="footer"></div> -->
+     <script src="./js/header_script.js" defer></script>
+</body>
+</html>

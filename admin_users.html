@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitopia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet" href="css/user_homepage.css">
+</head>
+<style>
+    /* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* Container for user cards */
+#user-cards-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 4 columns */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Centers the cards horizontally */
+}
+
+/* Individual user card style */
+.user-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-10px); /* Hover effect */
+    border: 1px solid var(--Border-color);
+        
+}
+
+.card-content h3, .card-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Remove button styling */
+.remove-btn {
+    background-color: #d13535;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+h2 {
+            margin: 10px 0 -5px 0;
+            text-align: center;
+        }
+.remove-btn:hover {
+    background-color: #e34444;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+    #user-cards-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #user-cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #user-cards-container {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
+
+</style>
+<body>
+    <div id="header"></div>
+    <h2>USERS</h2>
+    <div id="user-cards-container">
+        <!-- User cards will be inserted dynamically here -->
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        window.onload = function() {
+            loadHTML('header', 'header.html');
+            loadHTML('footer', 'footer.html');
+            generateUserCards(); // Call the function to generate user cards
+        };
+
+        function loadHTML(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+    fetchUsers();
+});
+
+function fetchUsers() {
+    fetch('./php/get_users.php')  // This will point to your get_users.php file
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                displayUsers(data.users); // Pass the users array to display function
+            } else {
+                alert('Error fetching users: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            alert('Failed to fetch users.');
+        });
+}
+
+function displayUsers(users) {
+    const container = document.getElementById('user-cards-container'); // Container where cards will be displayed
+    container.innerHTML = ''; // Clear existing content
+
+    users.forEach(user => {
+        const card = document.createElement('div');
+        card.classList.add('user-card');
+
+        card.innerHTML = `
+            <div class="card-content">
+                <h3>User ID: ${user.id}</h3>
+                <p>Name: ${user.username}</p>
+                <p>Role: ${user.role}</p>
+                <button class="remove-btn" onclick="removeUser(${user.id})">Remove</button>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+function removeUser(userId) {
+    // Function to remove user from the database
+    // You can send a request to a PHP file like remove_user.php, passing the user ID
+    fetch('./php/remove_user.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userId: userId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('User removed successfully');
+            fetchUsers();  // Reload the user list after removal
+        } else {
+            alert('Error removing user: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error removing user:', error);
+        alert('Failed to remove user.');
+    });
+}
+
+    </script>
+</body>
+</html>

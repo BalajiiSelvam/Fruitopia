@@ -1,0 +1,171 @@
+@import url('root.css');
+html, body {
+    height: 100%; /* Make sure the body takes up the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    font-family: var(--DancingScript);
+}
+
+body {
+    font-family: var(--DancingScript);
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+}
+
+.container2 {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out left and right sides */
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    height: 435px;
+    
+}
+
+
+.left-column {
+    flex: 1; /* Take up one half of the space */
+    padding: 20px;
+}
+.right-column {
+    flex: 1; /* Take up the other half of the space */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    padding: 23px;
+}
+img {
+    max-width: 80%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: -43px;
+    margin-right: 60px;
+}
+
+
+.about-title, .contact-title {
+    text-align: center; /* Center align the section titles */
+    font-size: 24px; /* Adjust the size as needed */
+    margin: 20px 0; /* Spacing above and below the titles */
+}
+
+.about-message, .contact-message {
+    text-align: center; /* Center align the messages */
+    font-size: 16px; /* Standard message size */
+    margin: 10px 0; /* Spacing for the messages */
+}
+
+
+.left-column{
+    margin-top: 20px;
+    /* margin-right: -40px; */
+    margin-left: 50px;
+}
+
+.container3 {
+    text-align: center;
+    padding: 20px;
+    
+    background-color: var(--TopNav-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1;
+    height: 320px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0px;
+
+}
+.card {
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust height as needed */
+    width: 190px;  /* Adjust width as needed */
+    margin: auto;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card:hover {
+    transform: translateY(-10px) rotate(3deg) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    border: 2px solid var(--Highlight-color); /* Highlight border */
+}
+.card img {
+    width: 80%; /* Ensure the image scales within the card */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Adjust image to fit properly */
+    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Ensures image behaves as a block-level element */
+    margin-bottom: 8px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+
+.card h4 {
+    font-size: 15px;
+    color: #555;
+    margin: 0; /* Remove extra margin */
+}
+
+.about-us {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 40px 20px; /* Spacing around the section */
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between; /* Space between left and right columns */
+    align-items: center; /* Vertically align the columns */
+    gap: 25px; /* Add space between columns */
+    margin-top: -7px;
+}
+
+.left1 {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically within the column */
+    padding: 20px;
+}
+
+.left1 img {
+    max-width: 400px; /* Reduced size of the image */
+    width: 100%; /* Ensure it scales with the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+    margin-left: 100px;
+    margin-top: -3px;
+}
+
+
+.right1 {
+    max-width: 600px; /* Control content width */
+    margin-right: 100px;
+}
+
+.right1 h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    
+}
+
+.right1 p {
+    font-size: 1rem;
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 15px;
+    text-align: justify; /* Align content neatly */
+  
+    width: 600px;
+}

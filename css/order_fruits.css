@@ -16,7 +16,8 @@
     text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    margin-top: 10px;
 }
 
 .grid {
@@ -88,12 +89,18 @@
     
 }
 .item-rating {
-    font-size: 13px;
-    color: #ffbf00; /* Gold color for rating stars */
-    margin-right: 20px;
-    
-   
+    display: inline-block; /* Ensures the background adjusts to the text size */
+    font-size: 10px;
+    color: var(--SubHeading2-color); 
+    background-color: #fefefe; /* Light gray background */
+    border: 1px solid var(--Glow-color);
+    padding: 1px 3px; /* Adds space around the text */
+    border-radius: 3px; /* Rounds the corners of the rectangle */
+    text-align: center; /* Centers the text */
+    margin-right: 18px;
+    margin-top: 2px;
 }
+
 
 .item-price {
     font-size: 12px;
@@ -147,12 +154,12 @@
 }
 
 .more-btn {
-    align-self: flex-end; /* Aligns the button to the right edge */
+    align-self: center; /* Aligns the button to the right edge */
     margin-top: 20px; /* Adds spacing from the content above */
     padding: 5px 10px; /* Smaller button size */
-    background-color: #007BFF;
-    color: white;
-    border: none;
+    background-color: var(--TopNav-color);
+    color: rgb(0, 0, 0);
+    border: 1px solid var(--SubHeading2-color);
     border-radius: 5px;
     font-size: 0.9rem; /* Reduced font size */
     cursor: pointer;
@@ -160,5 +167,6 @@
 }
 
 .more-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color:var(--SubHeading2-color);
+    color: white; /* Darker blue on hover */
 }

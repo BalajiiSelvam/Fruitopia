@@ -7,10 +7,99 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/root.css">
     <link rel="stylesheet" href="css/user_homepage.css">
+    <style>
+        .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.blog-form, .blog-cards, .trending-section {
+    margin-bottom: 20px;
+}
+
+.blog-form input, .blog-form textarea, .blog-form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.blog-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.blog-card img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.trending-section span {
+    display: inline-block;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.trending-section span:hover {
+    background-color: #ddd;
+}
+
+    </style>
 </head>
 <body>
     <div id="header"></div>
-  
+    <div class="container">
+        <section class="blog-form" id="create-blog">
+            <h2>Create a New Blog</h2>
+            <form id="blogForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="title" placeholder="Blog Title" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    
+        <section class="trending-section">
+            <h2>Trending Topics</h2>
+            <span>#Technology</span>
+            <span>#Health</span>
+            <span>#Travel</span>
+            <span>#Lifestyle</span>
+        </section>
+    
+        <section class="blog-cards" id="blogs">
+            <h2>Recent Blogs</h2>
+            <div class="blog-card">
+                <img src="https://via.placeholder.com/100" alt="Blog Image">
+                <div>
+                    <h3>Sample Blog Title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><strong>By:</strong> John Doe</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://via.placeholder.com/100" alt="Blog Image">
+                <div>
+                    <h3>Another Blog Title</h3>
+                    <p>Praesent ac sem eget est egestas volutpat.</p>
+                    <p><strong>By:</strong> Jane Smith</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
     <div id="footer"></div>
     <script src="./js/user_homepagescript.js"></script>
 </body>
